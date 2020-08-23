@@ -1,0 +1,10 @@
+.navbar-brand {
+    font-size: 2rem !important;
+}
+.navbar-brand span{
+    color: #28AE60;
+}
+
+.navbar-collapse li {
+    margin-right: 1rem !important;
+}

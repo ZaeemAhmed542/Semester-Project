@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="styles/Login.css">
+<div class="login-page" ng-controller="SignUpCtrl">
+    <div class="form">
+        <form class="login-form" method="POST" ng-submit="onSubmit()">
+        <input type="text" ng-model="name" placeholder="username"/>
+        <input type="email" id="email" ng-model="email" placeholder="email"/>
+        <input type="password" ng-model="password" id="password" placeholder="password"/>
+        <input type="text" ng-model="FB" id="FB" placeholder="FB HANDLE"/>
+        <input type="text" ng-model="INSTA" id="INSTA" placeholder="INSTA HANDLE"/>
+        <input type="text" ng-model="TWITTER" id="TWITTER" placeholder="TWITTER HANDLE"/>
+        <input type="submit" name="submit" value="Sign Up"/>
+        <p class="message">Already registered? <a href="#!Login">Login</a></p>
+        </form>
+</div>
+</div>
+
+
+
