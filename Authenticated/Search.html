@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="../styles/Auth_Search.css">
+<div ng-controller="SearchCtrl">
+    <form class="form-search" method="get" action="#">
+        <input type="search" name="search" placeholder="search Influencer" ng-model="query">
+        <button type="submit">Search</button>
+    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 user-card" ng-repeat="user in users ">
+                <div class="card-container ">
+                    <div class="upper-container ">
+                        <div class="image-container ">
+                            <img src={{user.profilepic}}/>
+                        </div>
+                    </div>
+                    <div class="lower-container ">
+                        <div>
+                            <h3>Alaina Wick</h3>
+                        </div>
+                        <div>
+                            <p>sodales accumsan ligula. Aenean sed diam tristique, fermentum mi nec, ornare arch.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="# " class="btn ">View profile</a>
+                            <button ng-click="handleRequest(user[0]);" class="btn" data-id={{user[0]}}>Connect</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

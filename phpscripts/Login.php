@@ -18,9 +18,7 @@ $error = "";
         $user = mysqli_fetch_row($User);
         $hash = md5($password);
         if($user[2] == $hash) {
-            $user = $user;
-            $_SESSION['username'] = $user[0];
-            $_SESSION['email'] = $user[1];
+            $_SESSION['user'] = $user;
         }
         else {
             $user = NULL;

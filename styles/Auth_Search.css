@@ -1,0 +1,135 @@
+.form-search {
+    margin: 3rem auto;
+    text-align: center;
+    font: bold 13px sans-serif;
+    max-width: 70%;
+    position: relative;
+}
+
+.form-search input {
+    width: 60%;
+    box-sizing: border-box;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 14px 15px 14px 40px;
+    border: 1px solid #b6c3cd;
+    ;
+    border-right: 0;
+    color: #4E565C;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.form-search button {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: #28AE60;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    color: #ffffff;
+    padding: 15px 22px;
+    margin-left: -4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.form-search i {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 16px;
+    color: #28AE60;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user-card {
+    margin-top: 2rem;
+}
+
+.card-container {
+    width: 100%;
+    height: 400px;
+    background: #FFF;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.upper-container {
+    height: 150px;
+    position: relative;
+    background: #28AE60;
+}
+
+.image-container {
+    background: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+.image-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.lower-container {
+    height: 280px;
+    background: #FFF;
+    padding: 20px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.lower-container h3,
+h4 {
+    box-sizing: border-box;
+    line-height: .6;
+    font-weight: lighter;
+}
+
+.lower-container h4 {
+    color: #28AE60;
+    opacity: .6;
+    font-weight: bold;
+}
+
+.lower-container p {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.lower-container .btn {
+    padding: 12px 20px;
+    background: #212529;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .3s ease-in;
+}
+
+.lower-container .btn:hover {
+    background: transparent;
+    color: #28AE60;
+    border: 2px solid #28AE60;
+}

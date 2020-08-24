@@ -2,17 +2,19 @@
 <div class="login-page" ng-controller="SignUpCtrl">
     <div class="form">
         <form class="login-form" method="POST" ng-submit="onSubmit()">
-        <input type="text" ng-model="name" placeholder="username"/>
-        <input type="email" id="email" ng-model="email" placeholder="email"/>
-        <input type="password" ng-model="password" id="password" placeholder="password"/>
-        <input type="text" ng-model="FB" id="FB" placeholder="FB HANDLE"/>
-        <input type="text" ng-model="INSTA" id="INSTA" placeholder="INSTA HANDLE"/>
-        <input type="text" ng-model="TWITTER" id="TWITTER" placeholder="TWITTER HANDLE"/>
-        <input type="submit" name="submit" value="Sign Up"/>
-        <p class="message">Already registered? <a href="#!Login">Login</a></p>
+            <input type="text" ng-model="name" placeholder="username" />
+            <input type="email" id="email" ng-model="email" placeholder="email" />
+            <input type="password" ng-model="password" id="password" placeholder="password" />
+            <label>SELECT PLATFORM : </label> <br>
+            <select ng-model="platform" ng-options="x for x in platforms">
+            </select>
+            <input type="text" ng-model="handle" id="platform" placeholder="PLATFORM HANDLE" />
+            <input type="text" ng-model="profilepic" id="profile" placeholder="profile pic link" />
+            <input type="number" ng-model="followers" id="followers" placeholder="FOLLOWERS" />
+            <input type="number" ng-model="following" id="following" placeholder="FOLLOWING" />
+            <input type="number" ng-model="posts" id="posts" placeholder="POSTS" />
+            <input type="submit" name="submit" value="Sign Up" />
+            <p class="message">Already registered? <a href="#!Login">Login</a></p>
         </form>
+    </div>
 </div>
-</div>
-
-
-
