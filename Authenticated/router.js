@@ -14,6 +14,10 @@ app.config([
                 controller: "SearchCtrl",
                 templateUrl: "Search.html",
             })
+            .when("/Friends", {
+                controller: "FriendCtrl",
+                templateUrl: "Friend.html",
+            })
     },
 ]);
 
@@ -27,6 +31,7 @@ app.controller("ProfileCtrl", function($scope, $http, $window) {
             if (Userdata.error) {
                 $window.location.href = '/semester/'
             }
+            $scope.id = Userdata[0];
             $scope.handle = Userdata[4];
             $scope.username = Userdata[1];
             $scope.followers = Userdata[6];
@@ -50,8 +55,43 @@ app.controller('LogoutCtrl', function($scope, $http, $window) {
 
 
 
-app.controller('MessageCtrl', function() {
+app.controller('MessageCtrl', function($scope, $http) {
+    $scope.selectedUser = 17;
+    $scope.userId = $scope.$parent.id;
+    $scope.message = "";
+    $scope.messages = [];
+    $scope.left = 'chat-bubble chat-bubble--left';
+    $scope.right = "chat-bubble chat-bubble--right";
+    $http({
+            method: 'POST',
+            url: '../phpscripts/getMessages.php',
+            data: {
+                'id': 17
+            }
+        })
+        .then(function(data) {
+            $scope.messages = data.data;
+            console.log($scope.messages)
+        })
+})
 
+app.controller('FriendCtrl', function($http, $scope) {
+    $scope.friends = [];
+    $scope.pending = [];
+    $http({
+            method: 'GET',
+            url: '../phpscripts/getFriends.php'
+        })
+        .then(function(data) {
+            $scope.friends = data.data;
+        })
+    $http({
+            method: 'GET',
+            url: '../phpscripts/Pending.php'
+        })
+        .then(function(data) {
+            $scope.pending = data.data;
+        })
 })
 
 app.controller('SearchCtrl', function($scope, $http) {
@@ -66,10 +106,8 @@ app.controller('SearchCtrl', function($scope, $http) {
         })
         .then(function(data) {
             $scope.users = data.data;
-            console.log($scope.users)
         })
     $scope.handleRequest = function(id) {
-        console.log(id)
         $http({
                 method: "POST",
                 url: "../phpscripts/checkFriend.php",
@@ -78,7 +116,19 @@ app.controller('SearchCtrl', function($scope, $http) {
                 }
             })
             .then(function(data) {
-                console.log(data);
+                const status = data;
+                if (!status.data.isFriend) {
+                    $http({
+                        method: "POST",
+                        url: "../phpscripts/AddFriend.php",
+                        data: {
+                            'id': id
+                        }
+                    })
+                }
             })
+    }
+    $scope.fetchUser = function() {
+
     }
 })

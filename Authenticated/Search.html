@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../styles/Auth_Search.css">
 <div ng-controller="SearchCtrl">
-    <form class="form-search" method="get" action="#">
+    <form class="form-search" method="POST" ng-submit="fetchUser()">
         <input type="search" name="search" placeholder="search Influencer" ng-model="query">
         <button type="submit">Search</button>
     </form>
@@ -15,7 +15,7 @@
                     </div>
                     <div class="lower-container ">
                         <div>
-                            <h3>Alaina Wick</h3>
+                            <h3>{{user.username}}</h3>
                         </div>
                         <div>
                             <p>sodales accumsan ligula. Aenean sed diam tristique, fermentum mi nec, ornare arch.
