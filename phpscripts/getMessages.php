@@ -4,7 +4,7 @@ ob_start();
 include("../config/db.php");
 
 $form_data = json_decode(file_get_contents("php://input"));
-$id = $_SESSION['user'][0];
+$id = $form_data->userId;
 $otherId = $form_data->id;
 $output = array();
 

@@ -1,7 +1,40 @@
-<div ng-controller="FriendCtrl">
-    <div class="Friends">
-    </div>
-    <div class="Pending">
+<link rel="stylesheet" href="../styles/friendRequest.css">
 
+<div ng-controller="FriendCtrl">
+    <div class="container friends">
+        <div class="column" ng-repeat="friend in friends">
+            <div class="friend-request-card friend-request-card-better">
+                <div class="profile-picture">
+                    <img src={{friend.profilepic}}>
+                </div>
+                <div class="user-details">
+                    <h1>{{friend.username}}</h1>
+                    <a href="">View Profile</a>
+                </div>
+                <div class="friend-request-actions">
+                    <a class="button button-primary" href="#!Messages">Chat</a>
+                    <button class="button button-secondary" ng-click="unFriend(friend.ID)">Unfriend</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container pending">
+        <div class="column" ng-repeat="request in pending">
+            <div class="friend-request-card friend-request-card-better">
+                <div class="profile-picture">
+                    <img src={{request.profilepic}}>
+                </div>
+                <div class="user-details">
+                    <h1>{{request.username}}</h1>
+                    <a href="">View Profile</a>
+                </div>
+                <div class="friend-request-actions">
+                    <button class="button button-primary" ng-click="beFriend(request.ID)">Accept</button>
+                    <button class="button button-secondary" ng-click="reject(request.ID)">Decline</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

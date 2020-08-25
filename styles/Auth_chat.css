@@ -69,6 +69,7 @@ input:focus {
     vertical-align: baseline;
     background: #fff;
     transition: 0.3s ease;
+    border-bottom: 1px solid #28AE60;
 }
 
 .friend-drawer--grey {
@@ -96,6 +97,7 @@ input:focus {
 .friend-drawer--onhover:hover {
     background: #28AE60;
     cursor: pointer;
+    color: #fff;
 }
 
 .friend-drawer--onhover:hover p,
@@ -111,7 +113,7 @@ hr {
 
 .chat-bubble {
     padding: 10px 14px;
-    background: #eee;
+    background: #f5f6fa;
     margin: 10px 30px;
     border-radius: 9px;
     position: relative;
@@ -143,31 +145,46 @@ hr {
     margin-right: -20px;
 }
 
-@keyframes fadeIn {
+
+/* @keyframes fadeIn {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
     }
-}
+} */
 
 .offset-md-9 .chat-bubble {
     background: #28AE60;
     color: #fff;
 }
 
+.col-md-3 .chat-bubble {
+    background: #212529;
+    color: #fff;
+}
+
+.chat-panel {
+    position: relative;
+    height: 100vh;
+}
+
+.chat-panel .type {
+    position: fixed;
+    bottom: 1rem;
+    width: 80%;
+}
+
 .chat-box-tray {
-    background: #eee;
-    display: flex;
     align-items: baseline;
-    padding: 10px 15px;
     align-items: center;
     margin-top: 19px;
     bottom: 0;
 }
 
 .chat-box-tray input {
+    display: block;
     margin: 0 10px;
     padding: 6px 2px;
 }
@@ -180,4 +197,14 @@ hr {
 
 .chat-box-tray i:last-of-type {
     margin-left: 25px;
+}
+
+.message {
+    display: block;
+    padding-left: 0.5rem !important;
+}
+
+.messagePane {
+    max-height: 75vh;
+    overflow-y: scroll;
 }
