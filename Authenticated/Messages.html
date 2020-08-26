@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
 <div class="chat-container" ng-controller="MessageCtrl">
     <div class="row no-gutters">
-        <div class="col-md-4 border-right">
+        <div class="col-md-3 border-right">
             <div class="friend-drawer friend-drawer--onhover" ng-click="set(friend.ID)" ng-repeat="friend in friends">
                 <img class="profile-image" src={{friend.profilepic}} alt="">
                 <div class="text">
@@ -11,7 +11,7 @@
                 <span class="time text-muted small">13:21</span>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="chat-panel">
                 <div class="messagePane">
                     <div class="row no-gutters" ng-repeat="message in messages">

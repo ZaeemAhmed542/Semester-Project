@@ -34,8 +34,8 @@ app.controller("ProfileCtrl", function($scope, $http, $window) {
             $scope.id = Userdata[0];
             $scope.handle = Userdata[4];
             $scope.username = Userdata[1];
-            $scope.followers = Userdata[6] > 1000 ? (Userdata[6] / 1000).toFixed(2) +
-                "k" : Userdata[6];
+            $scope.followers = Userdata[6] > 1000000 ? (Userdata[6] / 1000000).toFixed(2) +
+                "m" : (Userdata[6] > 1000 ? (Userdata[6] / 1000).toFixed(2) + 'k' : Userdata[6]);
             $scope.following = Userdata[7] > 1000 ? (Userdata[7] / 1000).toFixed(2) + 'k' : Userdata[7];
             $scope.posts = Userdata[8] > 1000 ? (Userdata[8] / 1000).toFixed(2) + 'k' : Userdata[8];
             $scope.profilepic = Userdata[10];
@@ -74,7 +74,6 @@ app.controller('MessageCtrl', function($scope, $http) {
             })
             .then(function(data) {
                 $scope.messages = data.data;
-                $scope.message = "";
             })
     }
     $scope.set = function(ID) {
@@ -104,8 +103,13 @@ app.controller('MessageCtrl', function($scope, $http) {
             })
             .then(function(data) {
                 $scope.init();
+                $scope.message = "";
             })
     }
+
+    setInterval(() => {
+        $scope.init();
+    },100);
 })
 
 app.controller('FriendCtrl', function($http, $scope) {

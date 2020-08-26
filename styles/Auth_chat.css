@@ -1,3 +1,7 @@
+body {
+    background: #ede6de
+}
+
 .profile-image {
     width: 50px;
     height: 50px;
@@ -29,16 +33,6 @@
 .settings-tray--right i:hover {
     color: #28AE60;
     cursor: pointer;
-}
-
-.search-box {
-    background: #fafafa;
-    padding: 10px 13px;
-}
-
-.search-box .input-wrapper {
-    background: #fff;
-    border-radius: 40px;
 }
 
 .search-box .input-wrapper i {
@@ -145,24 +139,14 @@ hr {
     margin-right: -20px;
 }
 
-
-/* @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-} */
-
 .offset-md-9 .chat-bubble {
     background: #28AE60;
     color: #fff;
 }
 
 .col-md-3 .chat-bubble {
-    background: #212529;
-    color: #fff;
+    background: #fff;
+    color: #38472e;
 }
 
 .chat-panel {
@@ -189,9 +173,9 @@ hr {
     padding: 6px 2px;
 }
 
-.chat-box-tray i {
-    color: grey;
-    font-size: 30px;
+.chat-box-tray input {
+    color: #000;
+    font-size: 20px;
     vertical-align: middle;
 }
 
